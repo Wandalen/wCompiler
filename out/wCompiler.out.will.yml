@@ -2,13 +2,10 @@ format: outwillfile-2.0
 root:
   - wCompiler.out
 consistency:
-  wCompiler.out.will.yml: &ref_0
-    hash: 9fecb63ab1ceaed737b30246cb4b50eb
-    size: 37559
-  ../.ex.will.yml: &ref_1
-    hash: 7877ddd057cd655f4bb97d650181b35b
-    size: 1666
-  ../.im.will.yml: &ref_2
+  ../.ex.will.yml: &ref_0
+    hash: 76eb5ea68872d3911899958b6ecf2b26
+    size: 1667
+  ../.im.will.yml: &ref_1
     hash: 3e9ed02b9bd469d6f46477d5db587d2f
     size: 4560
 module:
@@ -19,19 +16,19 @@ module:
       description: ___
       enabled: 1
       version: 0.4.0
-      interpreters:
+      interpreters: &ref_2
         - njs >= 10.0.0
         - chrome >= 60.0.0
         - firefox >= 60.0.0
-      keywords:
+      keywords: &ref_3
         - tools
         - wTools
       license: MIT
       author: Kostiantyn Wandalen <wanalen@01.school>
-      contributors:
+      contributors: &ref_4
         - Kostiantyn Wandalen <wanalen@01.school>
       npm.name: wcompiler
-      npm.scripts:
+      npm.scripts: &ref_5
         test: wtest .run proto/**
         docgen: wdocgen .build proto
     path:
@@ -169,8 +166,6 @@ module:
           prefixPath: ''
         dst:
           prefixPath: ''
-        mandatory: 1
-        dstRewritingOnlyPreserving: 1
         criterion:
           tests: no.tests
           debug: debug
@@ -185,8 +180,6 @@ module:
           prefixPath: ''
         dst:
           prefixPath: ''
-        mandatory: 1
-        dstRewritingOnlyPreserving: 1
         criterion:
           tests: no.tests
           debug: release
@@ -201,8 +194,6 @@ module:
           prefixPath: ''
         dst:
           prefixPath: ''
-        mandatory: 1
-        dstRewritingOnlyPreserving: 1
         criterion:
           tests: no.tests
           debug: debug
@@ -217,8 +208,6 @@ module:
           prefixPath: ''
         dst:
           prefixPath: ''
-        mandatory: 1
-        dstRewritingOnlyPreserving: 1
         criterion:
           tests: no.tests
           debug: release
@@ -233,8 +222,6 @@ module:
           prefixPath: ''
         dst:
           prefixPath: ''
-        mandatory: 1
-        dstRewritingOnlyPreserving: 1
         criterion:
           raw: raw
           debug: release
@@ -250,8 +237,6 @@ module:
           prefixPath: ''
         dst:
           prefixPath: ''
-        mandatory: 1
-        dstRewritingOnlyPreserving: 1
         criterion:
           tests: no.tests
           raw: compiled
@@ -268,8 +253,6 @@ module:
           prefixPath: ''
         dst:
           prefixPath: ''
-        mandatory: 1
-        dstRewritingOnlyPreserving: 1
         criterion:
           tests: no.tests
           raw: compiled
@@ -285,8 +268,6 @@ module:
           prefixPath: ''
         dst:
           prefixPath: ''
-        mandatory: 1
-        dstRewritingOnlyPreserving: 1
         criterion:
           tests: only.tests
           raw: compiled
@@ -302,8 +283,6 @@ module:
           prefixPath: ''
         dst:
           prefixPath: ''
-        mandatory: 1
-        dstRewritingOnlyPreserving: 1
         criterion:
           tests: only.tests
           raw: compiled
@@ -686,24 +665,6 @@ module:
           content: prime
         inherit:
           - files.transpile
-      exported.proto.export:
-        opts:
-          filePath: 'reflector::exported.proto.export*'
-        criterion:
-          generated: 1
-          content: proto
-          export: 1
-        inherit:
-          - files.reflect
-      exported.files.proto.export:
-        opts:
-          filePath: 'reflector::exported.files.proto.export*'
-        criterion:
-          generated: 1
-          content: proto
-          export: 1
-        inherit:
-          - files.reflect
     build:
       proto.export:
         steps:
@@ -792,9 +753,8 @@ module:
           content: proto
           export: 1
     consistency:
-      wCompiler.out.will.yml: *ref_0
-      ../.ex.will.yml: *ref_1
-      ../.im.will.yml: *ref_2
+      ../.ex.will.yml: *ref_0
+      ../.im.will.yml: *ref_1
   ../:
     about:
       name: wCompiler
@@ -802,21 +762,13 @@ module:
       description: ___
       enabled: 1
       version: 0.4.0
-      interpreters:
-        - njs >= 10.0.0
-        - chrome >= 60.0.0
-        - firefox >= 60.0.0
-      keywords:
-        - tools
-        - wTools
+      interpreters: *ref_2
+      keywords: *ref_3
       license: MIT
       author: Kostiantyn Wandalen <wanalen@01.school>
-      contributors:
-        - Kostiantyn Wandalen <wanalen@01.school>
+      contributors: *ref_4
       npm.name: wcompiler
-      npm.scripts:
-        test: wtest .run proto/**
-        docgen: wdocgen .build proto
+      npm.scripts: *ref_5
     path:
       module.willfiles:
         criterion:
@@ -1458,9 +1410,8 @@ module:
           - 'build::npm'
     consistency:
       ../.ex.will.yml:
-        hash: 7877ddd057cd655f4bb97d650181b35b
-        size: 1666
+        hash: 76eb5ea68872d3911899958b6ecf2b26
+        size: 1667
       ../.im.will.yml:
         hash: 3e9ed02b9bd469d6f46477d5db587d2f
         size: 4560
-      wCompiler.out.will.yml: *ref_0
