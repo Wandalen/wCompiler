@@ -1,5 +1,5 @@
 
-# wCompiler -- Experimental! [![Build Status](https://travis-ci.org/Wandalen/wCompiler.svg?branch=master)](https://travis-ci.org/Wandalen/wCompiler)
+# wCompiler -- Experimental! [![Status](https://github.com/Wandalen/wCompiler/workflows/Test/badge.svg)](https://github.com/Wandalen/wCompiler}/actions?query=workflow%3ATest)
 
 ___
 
