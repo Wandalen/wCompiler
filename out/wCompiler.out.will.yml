@@ -1446,6 +1446,4 @@ module:
       ../.im.will.yml:
         hash: eac7a65d16302f744e4950260129e56e
         size: 4558
-      wCompiler.out.will.yml:
-        hash: 090add28f05db3195bbdd5765db7ed14
-        size: 36645
+      wCompiler.out.will.yml: *ref_0
