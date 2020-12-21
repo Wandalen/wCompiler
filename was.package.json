@@ -17,6 +17,6 @@
     "url" : "https://github.com/Wandalen/wCompiler/issues"
   },
   "dependencies" : { "wTools" : "" },
-  "devDependencies" : { "wTesting" : "", "wcompiler" : "file:." },
+  "devDependencies" : { "wTesting" : "", "wcompiler" : "file:.", "eslint" : "7.1.0" },
   "keywords" : [ "wTools" ]
 }
