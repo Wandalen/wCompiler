@@ -1,6 +1,6 @@
 {
   "name": "wcompiler",
-  "version": "0.3.64",
+  "version": "0.3.65",
   "description": "___",
   "author": "Kostiantyn Wandalen <wanalen@01.school>",
   "license": "MIT",
@@ -21,11 +21,11 @@
     "url": "https://github.com/Wandalen/wCompiler/issues"
   },
   "dependencies": {
-    "wTools": "gamma"
+    "wTools": "delta"
   },
   "devDependencies": {
     "eslint": "7.1.0",
-    "wTesting": "gamma",
+    "wTesting": "delta",
     "wcompiler": "file:."
   },
   "keywords": [
