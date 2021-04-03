@@ -2,10 +2,13 @@ format: outwillfile-2.0
 root:
   - wCompiler.out
 consistency:
-  ../.ex.will.yml: &ref_0
+  wCompiler.out.will.yml: &ref_0
+    hash: 04feded6351471fd3636c14765d1321f
+    size: 37261
+  ../.ex.will.yml: &ref_1
     hash: 76eb5ea68872d3911899958b6ecf2b26
     size: 1667
-  ../.im.will.yml: &ref_1
+  ../.im.will.yml: &ref_2
     hash: d3226eeb66ac326c61dc9aac21c02578
     size: 4728
 module:
@@ -16,19 +19,19 @@ module:
       description: ___
       enabled: 1
       version: 0.4.0
-      interpreters: &ref_2
+      interpreters:
         - njs >= 10.0.0
         - chrome >= 60.0.0
         - firefox >= 60.0.0
-      keywords: &ref_3
+      keywords:
         - tools
         - wTools
       license: MIT
       author: Kostiantyn Wandalen <wanalen@01.school>
-      contributors: &ref_4
+      contributors:
         - Kostiantyn Wandalen <wanalen@01.school>
       npm.name: wcompiler
-      npm.scripts: &ref_5
+      npm.scripts:
         test: wtest .run proto/**
         docgen: wdocgen .build proto
     path:
@@ -679,6 +682,24 @@ module:
           content: prime
         inherit:
           - files.transpile
+      exported.proto.export:
+        opts:
+          filePath: 'reflector::exported.proto.export'
+        criterion:
+          generated: 1
+          content: proto
+          export: 1
+        inherit:
+          - files.reflect
+      exported.files.proto.export:
+        opts:
+          filePath: 'reflector::exported.files.proto.export'
+        criterion:
+          generated: 1
+          content: proto
+          export: 1
+        inherit:
+          - files.reflect
     build:
       proto.export:
         steps:
@@ -767,8 +788,9 @@ module:
           content: proto
           export: 1
     consistency:
-      ../.ex.will.yml: *ref_0
-      ../.im.will.yml: *ref_1
+      wCompiler.out.will.yml: *ref_0
+      ../.ex.will.yml: *ref_1
+      ../.im.will.yml: *ref_2
   ../:
     about:
       name: wCompiler
@@ -776,13 +798,21 @@ module:
       description: ___
       enabled: 1
       version: 0.4.0
-      interpreters: *ref_2
-      keywords: *ref_3
+      interpreters:
+        - njs >= 10.0.0
+        - chrome >= 60.0.0
+        - firefox >= 60.0.0
+      keywords:
+        - tools
+        - wTools
       license: MIT
       author: Kostiantyn Wandalen <wanalen@01.school>
-      contributors: *ref_4
+      contributors:
+        - Kostiantyn Wandalen <wanalen@01.school>
       npm.name: wcompiler
-      npm.scripts: *ref_5
+      npm.scripts:
+        test: wtest .run proto/**
+        docgen: wdocgen .build proto
     path:
       module.willfiles:
         criterion:
@@ -1440,3 +1470,6 @@ module:
       ../.im.will.yml:
         hash: d3226eeb66ac326c61dc9aac21c02578
         size: 4728
+      wCompiler.out.will.yml:
+        hash: 04feded6351471fd3636c14765d1321f
+        size: 37261
